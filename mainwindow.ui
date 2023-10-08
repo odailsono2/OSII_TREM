@@ -312,16 +312,16 @@
      </rect>
     </property>
     <property name="maximum">
-     <number>50</number>
+     <number>200</number>
     </property>
     <property name="pageStep">
      <number>1</number>
     </property>
     <property name="value">
-     <number>25</number>
+     <number>150</number>
     </property>
     <property name="sliderPosition">
-     <number>25</number>
+     <number>150</number>
     </property>
     <property name="orientation">
      <enum>Qt::Horizontal</enum>
@@ -337,13 +337,13 @@
      </rect>
     </property>
     <property name="maximum">
-     <number>50</number>
+     <number>200</number>
     </property>
     <property name="singleStep">
      <number>1</number>
     </property>
     <property name="value">
-     <number>25</number>
+     <number>190</number>
     </property>
     <property name="orientation">
      <enum>Qt::Horizontal</enum>
@@ -359,13 +359,13 @@
      </rect>
     </property>
     <property name="maximum">
-     <number>50</number>
+     <number>200</number>
     </property>
     <property name="singleStep">
      <number>1</number>
     </property>
     <property name="value">
-     <number>25</number>
+     <number>130</number>
     </property>
     <property name="orientation">
      <enum>Qt::Horizontal</enum>
@@ -381,10 +381,13 @@
      </rect>
     </property>
     <property name="maximum">
-     <number>50</number>
+     <number>200</number>
+    </property>
+    <property name="value">
+     <number>170</number>
     </property>
     <property name="sliderPosition">
-     <number>25</number>
+     <number>170</number>
     </property>
     <property name="orientation">
      <enum>Qt::Horizontal</enum>
@@ -400,10 +403,10 @@
      </rect>
     </property>
     <property name="maximum">
-     <number>50</number>
+     <number>200</number>
     </property>
     <property name="value">
-     <number>25</number>
+     <number>110</number>
     </property>
     <property name="orientation">
      <enum>Qt::Horizontal</enum>
@@ -530,7 +533,7 @@
     <property name="geometry">
      <rect>
       <x>1150</x>
-      <y>140</y>
+      <y>150</y>
       <width>67</width>
       <height>16</height>
      </rect>
@@ -651,19 +654,6 @@
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;4&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
     </property>
    </widget>
-   <widget class="QLabel" name="LTREM1">
-    <property name="geometry">
-     <rect>
-      <x>10</x>
-      <y>10</y>
-      <width>161</width>
-      <height>17</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Trem1 (x,y) </string>
-    </property>
-   </widget>
    <widget class="QLabel" name="label_trilho4a_2">
     <property name="geometry">
      <rect>
@@ -721,7 +711,6 @@
    <zorder>display3</zorder>
    <zorder>display4</zorder>
    <zorder>display5</zorder>
-   <zorder>LTREM1</zorder>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">

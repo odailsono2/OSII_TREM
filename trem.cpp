@@ -56,26 +56,9 @@ int Trem::getY(){
 }
 
 void Trem::setVelocidade(int valor){
-    this->velocidade = valor*10 ;
+    this->velocidade = valor ;
 }
 
-void move_vertical(int&y, const int &passo, const int& parar, const bool& ok){
-
-//    if (ok){
-       //sem1.acquire();
-   //    mtx1.lock();
-
-//    }
-
-    y+=passo*parar;
-
-//    if (!ok){
-//      // sem1.acquire();
-//       mtx1.unlock();
-//    }
-
-
-}
 //Função a ser executada após executar trem->START
 void Trem::run(){
 
@@ -97,7 +80,7 @@ void Trem::run(){
 
                 ID_trava1 = ID;
 
-                qDebug()<<"Trem ID = "<<ID_trava1 <<"travou mtx1";
+//                qDebug()<<"Trem ID = "<<ID_trava1 <<"travou mtx1";
             }
         }else{
 
@@ -117,7 +100,7 @@ void Trem::run(){
 
                 ID_trava2 = ID;
 
-                qDebug()<<"Trem ID = "<<ID_trava2 <<"travou mtx2";
+//                qDebug()<<"Trem ID = "<<ID_trava2 <<"travou mtx2";
             }
         }else{
 
@@ -136,7 +119,7 @@ void Trem::run(){
 
                 ID_trava3 = ID;
 
-                qDebug()<<"Trem ID = "<<ID_trava3 <<"travou mtx3";
+//                qDebug()<<"Trem ID = "<<ID_trava3 <<"travou mtx3";
             }
         }else{
 
@@ -155,7 +138,7 @@ void Trem::run(){
 
                 ID_trava4 = ID;
 
-                qDebug()<<"Trem ID = "<<ID_trava4 <<"travou mtx4";
+//                qDebug()<<"Trem ID = "<<ID_trava4 <<"travou mtx4";
             }
         }else{
 
@@ -174,7 +157,7 @@ void Trem::run(){
 
                 ID_trava5 = ID;
 
-                qDebug()<<"Trem ID = "<<ID_trava5 <<"travou mtx5";
+//                qDebug()<<"Trem ID = "<<ID_trava5 <<"travou mtx5";
             }
         }else{
 
@@ -193,7 +176,7 @@ void Trem::run(){
 
                 ID_trava6 = ID;
 
-                qDebug()<<"Trem ID = "<<ID_trava6 <<"travou mtx6";
+//                qDebug()<<"Trem ID = "<<ID_trava6 <<"travou mtx6";
             }
         }else{
 
@@ -211,7 +194,7 @@ void Trem::run(){
 
                 ID_trava7 = ID;
 
-                qDebug()<<"Trem ID = "<<ID_trava7 <<"travou mtx2";
+//                qDebug()<<"Trem ID = "<<ID_trava7 <<"travou mtx2";
             }
         }else{
 
@@ -223,11 +206,11 @@ void Trem::run(){
         else
             parar = 1;
 
-        if(ID==3){
-            qDebug()<<"Trem ID = "<<ID <<" entrou no loop";
-            qDebug()<<"(x,y) "<<"("<<x<<","<<y<<")"<<" | Velocidade " << velocidade<< " Regiao Critica [0] "<<regiao_critica[0];
-            qDebug()<<"     |x-trilhoX| = "<<std::abs(x - (X_TRILHO1 + TRILHO_H_COMP ));
-        }
+//        if(ID==3){
+//            qDebug()<<"Trem ID = "<<ID <<" entrou no loop";
+//            qDebug()<<"(x,y) "<<"("<<x<<","<<y<<")"<<" | Velocidade " << velocidade<< " Regiao Critica [0] "<<regiao_critica[0];
+//            qDebug()<<"     |x-trilhoX| = "<<std::abs(x - (X_TRILHO1 + TRILHO_H_COMP ));
+//        }
 
         switch(ID){
 
@@ -300,14 +283,14 @@ void Trem::run(){
 
         emit updateGUI(ID, x,y);    //Emite um sinal
 
-        msleep(550-velocidade);
+        msleep(201-velocidade);
 
         if (ID == ID_trava1 && !regiao_critica[0]){
             //
             mtx1.unlock();
             //sem1.release();
             ID_trava1 = 0;
-            qDebug()<<"Trem ID = "<<ID <<"liberou mtx1";
+//            qDebug()<<"Trem ID = "<<ID <<"liberou mtx1";
         }
 
         if (ID == ID_trava2 && !regiao_critica[1]){
@@ -315,7 +298,7 @@ void Trem::run(){
             mtx2.unlock();
             //sem1.release();
             ID_trava2 = 0;
-            qDebug()<<"Trem ID = "<<ID <<"liberou mtx2";
+//            qDebug()<<"Trem ID = "<<ID <<"liberou mtx2";
         }
 
         if (ID == ID_trava3 && !regiao_critica[2]){
@@ -323,7 +306,7 @@ void Trem::run(){
             mtx3.unlock();
             //sem1.release();
             ID_trava3 = 0;
-            qDebug()<<"Trem ID = "<<ID <<"liberou mtx3";
+//            qDebug()<<"Trem ID = "<<ID <<"liberou mtx3";
         }
 
         if (ID == ID_trava4 && !regiao_critica[3]){
@@ -331,7 +314,7 @@ void Trem::run(){
             mtx4.unlock();
             //sem1.release();
             ID_trava4 = 0;
-            qDebug()<<"Trem ID = "<<ID <<"liberou mtx4";
+//            qDebug()<<"Trem ID = "<<ID <<"liberou mtx4";
         }
 
         if (ID == ID_trava5 && !regiao_critica[4]){
@@ -339,7 +322,7 @@ void Trem::run(){
             mtx5.unlock();
             //sem1.release();
             ID_trava5 = 0;
-            qDebug()<<"Trem ID = "<<ID <<"liberou mtx5";
+//            qDebug()<<"Trem ID = "<<ID <<"liberou mtx5";
         }
 
         if (ID == ID_trava6 && !regiao_critica[5]){
@@ -347,7 +330,7 @@ void Trem::run(){
             mtx6.unlock();
             //sem1.release();
             ID_trava6 = 0;
-            qDebug()<<"Trem ID = "<<ID <<"liberou mtx6";
+//            qDebug()<<"Trem ID = "<<ID <<"liberou mtx6";
         }
 
         if (ID == ID_trava7 && !regiao_critica[6]){
@@ -355,7 +338,7 @@ void Trem::run(){
             mtx7.unlock();
             //sem1.release();
             ID_trava7 = 0;
-            qDebug()<<"Trem ID = "<<ID <<"liberou mtx7";
+//            qDebug()<<"Trem ID = "<<ID <<"liberou mtx7";
         }
 
     }
