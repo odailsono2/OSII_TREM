@@ -16,6 +16,9 @@ public:
     Trem(int,int,int);  //construtor
     void run();         //função a ser executada pela thread
     void setVelocidade(int);
+    bool regiao_critica [7] = {false, false,false,false,false,false,false};
+    int getX();
+    int getY();
 
 
 //Cria um sinal

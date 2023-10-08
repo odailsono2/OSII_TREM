@@ -46,22 +46,6 @@
      <string/>
     </property>
    </widget>
-   <widget class="QLabel" name="label_trilho2b">
-    <property name="geometry">
-     <rect>
-      <x>510</x>
-      <y>80</y>
-      <width>21</width>
-      <height>120</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QLabel { background: yellow}</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
    <widget class="QLabel" name="label_trilho1b">
     <property name="geometry">
      <rect>
@@ -84,7 +68,7 @@
       <x>780</x>
       <y>80</y>
       <width>21</width>
-      <height>137</height>
+      <height>141</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -113,9 +97,9 @@
    <widget class="QLabel" name="label_trilho4a">
     <property name="geometry">
      <rect>
-      <x>379</x>
+      <x>508</x>
       <y>200</y>
-      <width>270</width>
+      <width>21</width>
       <height>20</height>
      </rect>
     </property>
@@ -164,7 +148,7 @@
       <x>360</x>
       <y>200</y>
       <width>21</width>
-      <height>121</height>
+      <height>21</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -206,28 +190,12 @@
      <string>T3</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_trilho5a">
-    <property name="geometry">
-     <rect>
-      <x>630</x>
-      <y>200</y>
-      <width>291</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">QLabel { background: yellow}</string>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-   </widget>
    <widget class="QLabel" name="label_trilho3a">
     <property name="geometry">
      <rect>
       <x>90</x>
       <y>200</y>
-      <width>270</width>
+      <width>171</width>
       <height>20</height>
      </rect>
     </property>
@@ -260,7 +228,7 @@
       <x>630</x>
       <y>200</y>
       <width>21</width>
-      <height>137</height>
+      <height>21</height>
      </rect>
     </property>
     <property name="styleSheet">
@@ -571,9 +539,157 @@
      <string>0</string>
     </property>
    </widget>
+   <widget class="QLabel" name="mtxlabel1">
+    <property name="geometry">
+     <rect>
+      <x>510</x>
+      <y>100</y>
+      <width>21</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(143, 240, 164);</string>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;0&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="mtxlabel2">
+    <property name="geometry">
+     <rect>
+      <x>260</x>
+      <y>200</y>
+      <width>101</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(143, 240, 164);</string>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;1&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="mtxlabel3">
+    <property name="geometry">
+     <rect>
+      <x>380</x>
+      <y>200</y>
+      <width>131</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(143, 240, 164);</string>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;2&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="mtxlabel4">
+    <property name="geometry">
+     <rect>
+      <x>530</x>
+      <y>200</y>
+      <width>101</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(143, 240, 164);</string>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;3&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="mtxlabel7">
+    <property name="geometry">
+     <rect>
+      <x>630</x>
+      <y>220</y>
+      <width>21</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(143, 240, 164);</string>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;6&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="mtxlabel6">
+    <property name="geometry">
+     <rect>
+      <x>360</x>
+      <y>220</y>
+      <width>21</width>
+      <height>101</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(143, 240, 164);</string>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;5&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="mtxlabel5">
+    <property name="geometry">
+     <rect>
+      <x>650</x>
+      <y>200</y>
+      <width>131</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(143, 240, 164);</string>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;4&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="LTREM1">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>10</y>
+      <width>161</width>
+      <height>17</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Trem1 (x,y) </string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_trilho4a_2">
+    <property name="geometry">
+     <rect>
+      <x>800</x>
+      <y>200</y>
+      <width>111</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QLabel { background: yellow}</string>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+   </widget>
+   <zorder>mtxlabel7</zorder>
+   <zorder>label_trilho4a_2</zorder>
+   <zorder>mtxlabel6</zorder>
+   <zorder>mtxlabel5</zorder>
+   <zorder>mtxlabel4</zorder>
+   <zorder>mtxlabel3</zorder>
+   <zorder>mtxlabel2</zorder>
+   <zorder>mtxlabel1</zorder>
    <zorder>label_trilho3a</zorder>
    <zorder>label_trilho1a</zorder>
-   <zorder>label_trilho2b</zorder>
    <zorder>label_trilho1b</zorder>
    <zorder>label_trilho3b</zorder>
    <zorder>label_trilho2a</zorder>
@@ -581,7 +697,6 @@
    <zorder>label_trilho7a</zorder>
    <zorder>label_trilho5b</zorder>
    <zorder>label_trilho4b</zorder>
-   <zorder>label_trilho5a</zorder>
    <zorder>label_trilho6a</zorder>
    <zorder>label_trilho6b</zorder>
    <zorder>label_trilho8a</zorder>
@@ -606,6 +721,7 @@
    <zorder>display3</zorder>
    <zorder>display4</zorder>
    <zorder>display5</zorder>
+   <zorder>LTREM1</zorder>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">

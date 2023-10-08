@@ -43,11 +43,80 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->display3->setText(QString::number(ui->horizontalSlider_trem3->value()) + " km/h");
     ui->display4->setText(QString::number(ui->horizontalSlider_trem4->value()) + " km/h");
     ui->display5->setText(QString::number(ui->horizontalSlider_trem5->value()) + " km/h");
+
+
+
+
 }
 
 //Função que será executada quando o sinal UPDATEGUI for emitido
 void MainWindow::updateInterface(int id, int x, int y){
 
+    //ui->LTREM1->setText("Trem 1 ( " + QString::number( trem1->getX() ) + ", " + QString::number( trem1->getY() ) + " )");
+
+
+    if (trem1->regiao_critica[0] || trem2->regiao_critica[0] || trem3->regiao_critica[0] || trem4->regiao_critica[0] || trem5->regiao_critica[0])
+    {
+        ui->mtxlabel1->setStyleSheet("QLabel { background-color : orange;}");
+    }
+    else{
+        ui->mtxlabel1->setStyleSheet("QLabel { background-color: rgb(143, 240, 164);}");
+    }
+//--------
+    if (trem1->regiao_critica[1] || trem2->regiao_critica[1] || trem3->regiao_critica[1] || trem4->regiao_critica[1] || trem5->regiao_critica[1])
+    {
+        ui->mtxlabel2->setStyleSheet("QLabel { background-color : orange;}");
+
+    }
+    else{
+        ui->mtxlabel2->setStyleSheet("QLabel { background-color: rgb(143, 240, 164);}");
+    }
+//---
+    if (trem1->regiao_critica[2] || trem2->regiao_critica[2] || trem3->regiao_critica[2] || trem4->regiao_critica[2] || trem5->regiao_critica[2])
+    {
+        ui->mtxlabel3->setStyleSheet("QLabel { background-color : orange;}");
+
+    }
+    else{
+        ui->mtxlabel3->setStyleSheet("QLabel { background-color: rgb(143, 240, 164);}");
+    }
+//---
+    if (trem1->regiao_critica[3] || trem2->regiao_critica[3] || trem3->regiao_critica[3] || trem4->regiao_critica[3] || trem5->regiao_critica[3])
+    {
+        ui->mtxlabel4->setStyleSheet("QLabel { background-color : orange;}");
+
+    }
+    else{
+        ui->mtxlabel4->setStyleSheet("QLabel { background-color: rgb(143, 240, 164);}");
+    }
+
+//----
+    if (trem1->regiao_critica[4] || trem2->regiao_critica[4] || trem3->regiao_critica[4] || trem4->regiao_critica[4] || trem5->regiao_critica[4])
+    {
+        ui->mtxlabel5->setStyleSheet("QLabel { background-color : orange;}");
+
+    }
+    else{
+        ui->mtxlabel5->setStyleSheet("QLabel { background-color: rgb(143, 240, 164);}");
+    }
+//--
+    if (trem1->regiao_critica[5] || trem2->regiao_critica[5] || trem3->regiao_critica[5] || trem4->regiao_critica[5] || trem5->regiao_critica[5])
+    {
+        ui->mtxlabel6->setStyleSheet("QLabel { background-color : orange;}");
+
+    }
+    else{
+        ui->mtxlabel6->setStyleSheet("QLabel { background-color: rgb(143, 240, 164);}");
+    }
+//--
+    if (trem1->regiao_critica[6] || trem2->regiao_critica[6] || trem3->regiao_critica[6] || trem4->regiao_critica[6] || trem5->regiao_critica[6])
+    {
+        ui->mtxlabel7->setStyleSheet("QLabel { background-color : orange;}");
+
+    }
+    else{
+        ui->mtxlabel7->setStyleSheet("QLabel { background-color: rgb(143, 240, 164);}");
+    }
 
     switch(id){
     case 1: //Atualiza a posição do objeto da tela (quadrado) que representa o trem1
@@ -76,25 +145,7 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-/*
- * Ao clicar, trens começam execução
- */
 
-
-//void MainWindow::on_pushButton_clicked()
-//{
-//    trem1->start();
-//    trem2->start();
-//}
-
-///*
-// * Ao clicar, trens param execução
-// */
-//void MainWindow::on_pushButton_2_clicked()
-//{
-//    trem1->terminate();
-//    trem2->terminate();
-//}
 
 void MainWindow::on_horizontalSlider_trem1_valueChanged(int value)
 {
