@@ -19,6 +19,7 @@ public:
     bool regiao_critica [7] = {false, false,false,false,false,false,false};
     int getX();
     int getY();
+    int getID();
 
 
 //Cria um sinal

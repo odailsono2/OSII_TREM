@@ -32,13 +32,368 @@ QMutex mtx6;
 QMutex mtx7;
 
 
-QSemaphore sem1(1);
-QSemaphore sem2(1);
-QSemaphore sem3(1);
-QSemaphore sem4(1);
-QSemaphore sem5(1);
-QSemaphore sem6(1);
-QSemaphore sem7(1);
+void trava(Trem* trem, int m1, int m2, int m3,int m4,int m5, int m6, int m7){
+    QString msg;
+
+
+
+    msg.append("Trem " + QString::number(trem->getID()) );
+
+    if (m1){
+        mtx1.lock();
+        trem->regiao_critica[0] = true;
+        msg.append(" mtx 1 on |");
+    }
+    if (m2){
+        mtx2.lock();
+        trem->regiao_critica[1] = true;
+        msg.append(" mtx 2 on |");
+    }
+    if (m3){
+        mtx3.lock();
+        trem->regiao_critica[2] = true;
+        msg.append(" mtx 3 on |");
+    }
+    if (m4){
+        mtx4.lock();
+        trem->regiao_critica[3] = true;
+        msg.append(" mtx 4 on |");
+    }
+    if (m5){
+        mtx5.lock();
+        trem->regiao_critica[4] = true;
+        msg.append(" mtx 5 on |");
+    }
+    if (m6){
+        mtx6.lock();
+        trem->regiao_critica[5] = true;
+        msg.append(" mtx 6 on |");
+    }
+    if (m7){
+        mtx7.lock();
+        trem->regiao_critica[6] = true;
+        msg.append(" mtx 7 on |");
+    }
+
+    qDebug()<<msg;
+}
+
+void destrava(Trem* trem, int m1, int m2, int m3,int m4,int m5, int m6, int m7){
+    QString msg;
+
+    msg.append("Trem " + QString::number(trem->getID()) );
+
+    if (m1){
+        mtx1.unlock();
+        trem->regiao_critica[0] = false;
+        msg.append(" mtx 1 off |");
+    }
+    if (m2){
+        mtx2.unlock();
+        trem->regiao_critica[1] = false;
+        msg.append(" mtx 2 off |");
+    }
+    if (m3){
+        mtx3.unlock();
+        trem->regiao_critica[2] = false;
+        msg.append(" mtx 3 off |");
+    }
+    if (m4){
+        mtx4.unlock();
+        trem->regiao_critica[3] = false;
+        msg.append(" mtx 4 off |");
+    }
+    if (m5){
+        mtx5.unlock();
+        trem->regiao_critica[4] = false;
+        msg.append(" mtx 5 off |");
+    }
+    if (m6){
+        mtx6.unlock();
+        trem->regiao_critica[5] = false;
+        msg.append(" mtx 6 off |");
+    }
+    if (m7){
+        mtx7.unlock();
+        trem->regiao_critica[6] = false;
+        msg.append(" mtx 7 off |");
+    }
+
+    qDebug()<<msg;
+}
+
+void pontos_checagem(Trem* trem, int ID, int pt, int m[7] , int um[7]){
+
+    //int ID = trem->getID();
+
+    int x = trem->getX();
+
+    int y = trem->getY();
+
+    if ( x == 490 && y == 80 && pt == 1){ // ponto 1
+        if ( ID == 1){
+            trava(trem, m[0], m[1], m[2],m[3], m[4], m[5], m[6]);
+            destrava(trem, um[0], um[1], um[2],um[3], um[4], um[5], um[6]);
+        }
+    }
+
+    else if ( x == 490 && y == 200 && pt == 2){ //ponto 2
+
+        if ( ID == 1){
+
+           trava(trem, m[0], m[1], m[2],m[3], m[4], m[5], m[6]);
+           destrava(trem, um[0], um[1], um[2],um[3], um[4], um[5], um[6]);
+
+
+        }
+
+        else if ( ID == 4){
+
+           trava(trem, m[0], m[1], m[2],m[3], m[4], m[5], m[6]);
+           destrava(trem, um[0], um[1], um[2],um[3], um[4], um[5], um[6]);
+
+        }
+
+    }
+
+    else if ( x == 380  && y == 200 && pt == 3){ //ponto 3
+
+        if ( ID == 1){
+
+            trava(trem, m[0], m[1], m[2],m[3], m[4], m[5], m[6]);
+            destrava(trem, um[0], um[1], um[2],um[3], um[4], um[5], um[6]);
+
+
+        }
+
+        else if ( ID == 4){
+
+           trava(trem, m[0], m[1], m[2],m[3], m[4], m[5], m[6]);
+           destrava(trem, um[0], um[1], um[2],um[3], um[4], um[5], um[6]);
+
+        }
+
+
+
+
+    }
+
+
+    else if ( x == 340  && y == 200 && pt == 4){ //ponto 4
+
+        if ( ID == 1){
+
+            trava(trem, m[0], m[1], m[2],m[3], m[4], m[5], m[6]);
+            destrava(trem, um[0], um[1], um[2],um[3], um[4], um[5], um[6]);
+
+
+        }
+
+        else if ( ID == 3){
+
+           trava(trem, m[0], m[1], m[2],m[3], m[4], m[5], m[6]);
+           destrava(trem, um[0], um[1], um[2],um[3], um[4], um[5], um[6]);
+
+        }
+
+
+
+    }
+
+    else if ( x == 240 && y == 180 && pt == 5){ //ponto 5
+        if ( ID == 1){
+            trava(trem, m[0], m[1], m[2],m[3], m[4], m[5], m[6]);
+            destrava(trem, um[0], um[1], um[2],um[3], um[4], um[5], um[6]);
+        }
+    }
+
+    else if ( x == 220  && y == 200 && pt == 6){ //ponto 6
+        if ( ID == 3){
+            trava(trem, m[0], m[1], m[2],m[3], m[4], m[5], m[6]);
+            destrava(trem, um[0], um[1], um[2],um[3], um[4], um[5], um[6]);
+        }
+    }
+
+    else if ( x == 360  &&  y ==220 && pt == 7){ //ponto 7
+
+
+        if ( ID == 3){
+
+            trava(trem, m[0], m[1], m[2],m[3], m[4], m[5], m[6]);
+            destrava(trem, um[0], um[1], um[2],um[3], um[4], um[5], um[6]);
+
+
+        }
+
+        else if ( ID == 4){
+
+           trava(trem, m[0], m[1], m[2],m[3], m[4], m[5], m[6]);
+           destrava(trem, um[0], um[1], um[2],um[3], um[4], um[5], um[6]);
+
+        }
+    }
+    else if ( x == 340  &&  y ==320 && pt == 8){ // ponto 8
+        if ( ID == 3){
+            trava(trem, m[0], m[1], m[2],m[3], m[4], m[5], m[6]);
+            destrava(trem, um[0], um[1], um[2],um[3], um[4], um[5], um[6]);
+        }
+    }
+
+    else if ( x == 380  &&  y ==320 && pt == 9){ // ponto 9
+        if ( ID == 4){
+            trava(trem, m[0], m[1], m[2],m[3], m[4], m[5], m[6]);
+            destrava(trem, um[0], um[1], um[2],um[3], um[4], um[5], um[6]);
+        }
+    }
+
+    if ( x == 530  &&  y ==200 && pt == 10){ // ponto 10
+
+        if ( ID == 2){
+
+            trava(trem, m[0], m[1], m[2],m[3], m[4], m[5], m[6]);
+            destrava(trem, um[0], um[1], um[2],um[3], um[4], um[5], um[6]);
+
+
+        }
+
+        else if ( ID == 4){
+
+           trava(trem, m[0], m[1], m[2],m[3], m[4], m[5], m[6]);
+           destrava(trem, um[0], um[1], um[2],um[3], um[4], um[5], um[6]);
+
+        }
+    }
+
+    else if ( x == 610  &&  y ==200 && pt == 11){ // ponto 11
+
+        if ( ID == 2){
+
+            trava(trem, m[0], m[1], m[2],m[3], m[4], m[5], m[6]);
+            destrava(trem, um[0], um[1], um[2],um[3], um[4], um[5], um[6]);
+
+
+        }
+
+        else if ( ID == 4){
+
+           trava(trem, m[0], m[1], m[2],m[3], m[4], m[5], m[6]);
+           destrava(trem, um[0], um[1], um[2],um[3], um[4], um[5], um[6]);
+
+        }
+
+    }
+
+    else if ( x == 610  &&  y == 320 && pt == 12){ // ponto 12
+        if (ID == 4){
+            trava(trem, m[0], m[1], m[2],m[3], m[4], m[5], m[6]);
+            destrava(trem, um[0], um[1], um[2],um[3], um[4], um[5], um[6]);
+        }
+    }
+
+    else if ( x == 650  &&  y == 200 && pt==13){ // ponto 13
+
+        if ( ID == 2){
+
+            trava(trem, m[0], m[1], m[2],m[3], m[4], m[5], m[6]);
+            destrava(trem, um[0], um[1], um[2],um[3], um[4], um[5], um[6]);
+
+
+        }
+
+        else if ( ID == 5){
+
+           trava(trem, m[0], m[1], m[2],m[3], m[4], m[5], m[6]);
+           destrava(trem, um[0], um[1], um[2],um[3], um[4], um[5], um[6]);
+
+        }
+    }
+
+    else if ( x == 800  &&  y == 200 && pt == 14){ // ponto 14
+
+
+
+        if ( ID == 5){
+
+            trava(trem, m[0], m[1], m[2],m[3], m[4], m[5], m[6]);
+            destrava(trem, um[0], um[1], um[2],um[3], um[4], um[5], um[6]);
+
+        }
+    }
+
+    else if ( x == 650  &&  y == 320 && pt == 15){ // ponto 15
+
+
+
+        if ( ID == 5){
+
+            trava(trem, m[0], m[1], m[2],m[3], m[4], m[5], m[6]);
+            destrava(trem, um[0], um[1], um[2],um[3], um[4], um[5], um[6]);
+        }
+
+    }
+    else if ( x == 510  &&  y == 180 && pt == 16){ // ponto 16
+
+        if ( ID == 1){
+
+            trava(trem, m[0], m[1], m[2],m[3], m[4], m[5], m[6]);
+            destrava(trem, um[0], um[1], um[2],um[3], um[4], um[5], um[6]);
+
+
+        }
+
+        else if ( ID == 2){
+
+           trava(trem, m[0], m[1], m[2],m[3], m[4], m[5], m[6]);
+           destrava(trem, um[0], um[1], um[2],um[3], um[4], um[5], um[6]);
+
+        }
+    }
+
+    else if ( x == 630  &&  y == 220 && pt == 17){ // ponto 17
+
+        if ( ID == 4){
+
+            trava(trem, m[0], m[1], m[2],m[3], m[4], m[5], m[6]);
+            destrava(trem, um[0], um[1], um[2],um[3], um[4], um[5], um[6]);
+
+
+        }
+
+        else if ( ID == 5){
+
+           trava(trem, m[0], m[1], m[2],m[3], m[4], m[5], m[6]);
+           destrava(trem, um[0], um[1], um[2],um[3], um[4], um[5], um[6]);
+
+        }
+
+    }
+    else if ( x == 530  &&  y == 80 && pt == 18){ // ponto 18
+
+        if ( ID == 2){
+
+            trava(trem, m[0], m[1], m[2],m[3], m[4], m[5], m[6]);
+            destrava(trem, um[0], um[1], um[2],um[3], um[4], um[5], um[6]);
+
+
+        }
+
+    }
+
+    else if ( x == 780  &&  y == 180 && pt == 19){ // ponto 19
+
+
+        if ( ID == 2){
+
+            trava(trem, m[0], m[1], m[2],m[3], m[4], m[5], m[6]);
+            destrava(trem, um[0], um[1], um[2],um[3], um[4], um[5], um[6]);
+
+
+        }
+
+    }
+
+}
+
 
 //Construtor
 Trem::Trem(int ID, int x, int y){
@@ -54,7 +409,9 @@ int Trem::getX(){
 int Trem::getY(){
     return y;
 }
-
+int Trem::getID(){
+    return ID;
+}
 void Trem::setVelocidade(int valor){
     this->velocidade = valor ;
 }
@@ -65,152 +422,216 @@ void Trem::run(){
     int parar = 1;
 
 
+//    int mtx[] = {1,0,0,0,0,0,0};
 
+//    int umtx[] = {0,0,0,0,0,0,0};
 
     while(true){
 
-        //-------Regiao Critica 1
-        if ( x == 510 && y >= 90 && y <= 190){
-
-            regiao_critica [0] = true;
-
-            if ( ID != ID_trava1){
-                //sem1.acquire();
-                mtx1.lock();
-
-                ID_trava1 = ID;
-
-//                qDebug()<<"Trem ID = "<<ID_trava1 <<"travou mtx1";
+        // trem 1
+        if (ID == 1){
+            {// ponto 1
+                int mtx[7]  = {1,1,1,0,0,0,0};
+                int umtx[7] = {0,0,0,0,0,0,0};
+                int pt = 1;
+                pontos_checagem(this,ID,pt,mtx,umtx);
             }
-        }else{
 
-            regiao_critica [0] = false;
+            {// ponto 16
+                int mtx[7] =  {0,0,0,0,0,0,0};
+                int umtx[7] = {0,0,0,0,0,0,0};
+                int pt = 16;
+                pontos_checagem(this,ID,pt,mtx,umtx);
+            }
+            {// ponto 2
+                int mtx[7] =  {0,0,0,0,0,0,0};
+                int umtx[7] = {1,0,0,0,0,0,0};
+                int pt = 2;
+                pontos_checagem(this,ID,pt,mtx,umtx);
+            }
+            {// ponto 3
+                int mtx[7] =  {0,0,0,0,0,0,0};
+                int umtx[7] = {0,0,0,0,0,0,0};
+                int pt = 3;
+                pontos_checagem(this,ID,pt,mtx,umtx);
+            }
+            {// ponto 4
+                int mtx[7] =  {0,0,0,0,0,0,0};
+                int umtx[7] = {0,0,1,0,0,1,0};
+                int pt = 4;
+                pontos_checagem(this,ID,pt,mtx,umtx);
+            }
+            {// ponto 5
+                int mtx[7] =  {0,0,0,0,0,0,0};
+                int umtx[7] = {0,1,0,0,0,0,0};
+                int pt = 5;
+                pontos_checagem(this,ID,pt,mtx,umtx);
+            }
+        }
+        //--------------------
+
+        // trem 2
+        if (ID == 2){
+            {// ponto 19
+                int mtx[7]  = {1,0,0,1,1,0,0};
+                int umtx[7] = {0,0,0,0,0,0,0};
+                int pt = 19;
+                pontos_checagem(this,ID,pt,mtx,umtx);
+            }
+
+            {// ponto 13
+                int mtx[7] =  {0,0,0,0,0,0,0};
+                int umtx[7] = {0,0,0,0,0,0,0};
+                int pt = 13;
+                pontos_checagem(this,ID,pt,mtx,umtx);
+            }
+            {// ponto 11
+                int mtx[7] =  {0,0,0,0,0,0,0};
+                int umtx[7] = {0,0,0,0,1,0,0};
+                int pt = 11;
+                pontos_checagem(this,ID,pt,mtx,umtx);
+            }
+            {// ponto 10
+                int mtx[7] =  {0,0,0,0,0,0,0};
+                int umtx[7] = {0,0,0,0,0,0,0};
+                int pt = 10;
+                pontos_checagem(this,ID,pt,mtx,umtx);
+            }
+            {// ponto 16
+                int mtx[7] =  {0,0,0,0,0,0,0};
+                int umtx[7] = {0,0,0,1,0,0,0};
+                int pt = 16;
+                pontos_checagem(this,ID,pt,mtx,umtx);
+            }
+            {// ponto 18
+                int mtx[7] =  {0,0,0,0,0,0,0};
+                int umtx[7] = {1,0,0,0,0,0,0};
+                int pt = 18;
+                pontos_checagem(this,ID,pt,mtx,umtx);
+            }
+        }
+        //--------------------
+
+        // trem 3
+        if (ID == 3){
+            {// ponto 6
+                int mtx[7]  = {0,1,0,0,0,1,0};
+                int umtx[7] = {0,0,0,0,0,0,0};
+                int pt = 6;
+                pontos_checagem(this,ID,pt,mtx,umtx);
+            }
+
+            {// ponto 4
+                int mtx[7] =  {0,0,0,0,0,0,0};
+                int umtx[7] = {0,0,0,0,0,0,0};
+                int pt = 4;
+                pontos_checagem(this,ID,pt,mtx,umtx);
+            }
+            {// ponto 7
+                int mtx[7] =  {0,0,0,0,0,0,0};
+                int umtx[7] = {0,1,0,0,0,0,0};
+                int pt = 7;
+                pontos_checagem(this,ID,pt,mtx,umtx);
+            }
+            {// ponto 8
+                int mtx[7] =  {0,0,0,0,0,0,0};
+                int umtx[7] = {0,0,0,0,0,1,0};
+                int pt = 8;
+                pontos_checagem(this,ID,pt,mtx,umtx);
+            }
 
         }
-        //---------Fim da regiao critica 1
-
-        //---------Regiao Critica 2
-        if ( x >= 250  && x <= 350  && y == 200 ){
-
-            regiao_critica [1] = true;
-
-            if ( ID != ID_trava2){
-                //sem1.acquire();
-                mtx2.lock();
-
-                ID_trava2 = ID;
-
-//                qDebug()<<"Trem ID = "<<ID_trava2 <<"travou mtx2";
+        //--------------------
+        // trem 4
+        if (ID == 4){
+            {// ponto 9
+                int mtx[7]  = {0,0,1,1,0,1,1};
+                int umtx[7] = {0,0,0,0,0,0,0};
+                int pt = 9;
+                pontos_checagem(this,ID,pt,mtx,umtx);
             }
-        }else{
 
-            regiao_critica [1] = false;
+            {// ponto 7
+                int mtx[7] =  {0,0,0,0,0,0,0};
+                int umtx[7] = {0,0,0,0,0,0,0};
+                int pt = 7;
+                pontos_checagem(this,ID,pt,mtx,umtx);
+            }
+            {// ponto 3
+                int mtx[7] =  {0,0,0,0,0,0,0};
+                int umtx[7] = {0,0,0,0,0,1,0};
+                int pt = 3;
+                pontos_checagem(this,ID,pt,mtx,umtx);
+            }
+            {// ponto 2
+                int mtx[7] =  {0,0,0,0,0,0,0};
+                int umtx[7] = {0,0,0,0,0,0,0};
+                int pt = 2;
+                pontos_checagem(this,ID,pt,mtx,umtx);
+            }
+            {// ponto 10
+                int mtx[7] =  {0,0,0,0,0,0,0};
+                int umtx[7] = {0,0,1,0,0,0,0};
+                int pt = 10;
+                pontos_checagem(this,ID,pt,mtx,umtx);
+            }
+            {// ponto 11
+                int mtx[7] =  {0,0,0,0,0,0,0};
+                int umtx[7] = {0,0,0,0,0,0,0};
+                int pt = 11;
+                pontos_checagem(this,ID,pt,mtx,umtx);
+            }
+            {// ponto 17
+                int mtx[7] =  {0,0,0,0,0,0,0};
+                int umtx[7] = {0,0,0,1,0,0,0};
+                int pt = 17;
+                pontos_checagem(this,ID,pt,mtx,umtx);
+            }
+            {// ponto 12
+                int mtx[7] =  {0,0,0,0,0,0,0};
+                int umtx[7] = {0,0,0,0,0,0,1};
+                int pt = 12;
+                pontos_checagem(this,ID,pt,mtx,umtx);
+            }
+        }
+        //--------------------
+
+        // trem 5
+        if (ID == 5){
+            {// ponto 15
+                int mtx[7]  = {0,0,0,0,1,0,1};
+                int umtx[7] = {0,0,0,0,0,0,0};
+                int pt = 15;
+                pontos_checagem(this,ID,pt,mtx,umtx);
+            }
+
+            {// ponto 17
+                int mtx[7] =  {0,0,0,0,0,0,0};
+                int umtx[7] = {0,0,0,0,0,0,0};
+                int pt = 17;
+                pontos_checagem(this,ID,pt,mtx,umtx);
+            }
+            {// ponto 13
+                int mtx[7] =  {0,0,0,0,0,0,0};
+                int umtx[7] = {0,0,0,0,0,0,1};
+                int pt = 13;
+                pontos_checagem(this,ID,pt,mtx,umtx);
+            }
+            {// ponto 14
+                int mtx[7] =  {0,0,0,0,0,0,0};
+                int umtx[7] = {0,0,0,0,1,0,0};
+                int pt = 14;
+                pontos_checagem(this,ID,pt,mtx,umtx);
+            }
 
         }
+        //--------------------
 
-        //---------Regiao Critica 3
-        if ( x >= 370  && x <= 380 + 111  && y == 200 ){
-
-            regiao_critica [2] = true;
-
-            if ( ID != ID_trava3){
-                //sem1.acquire();
-                mtx3.lock();
-
-                ID_trava3 = ID;
-
-//                qDebug()<<"Trem ID = "<<ID_trava3 <<"travou mtx3";
-            }
-        }else{
-
-            regiao_critica [2] = false;
-
-        }
-
-        //---------Regiao Critica 4
-        if ( x >= 520 && x <= 530+91  && y == 200 ){
-
-            regiao_critica [3] = true;
-
-            if ( ID != ID_trava4){
-                //sem1.acquire();
-                mtx4.lock();
-
-                ID_trava4 = ID;
-
-//                qDebug()<<"Trem ID = "<<ID_trava4 <<"travou mtx4";
-            }
-        }else{
-
-            regiao_critica [3] = false;
-
-        }
-
-        //---------Regiao Critica 5
-        if ( x >= 655 && x <= 650+121  && std::abs( y - (Y_TRILHO1 + TRILHO_V_COMP)) == 0 ){
-
-            regiao_critica [4] = true;
-
-            if ( ID != ID_trava5){
-                //sem1.acquire();
-                mtx5.lock();
-
-                ID_trava5 = ID;
-
-//                qDebug()<<"Trem ID = "<<ID_trava5 <<"travou mtx5";
-            }
-        }else{
-
-            regiao_critica [4] = false;
-
-        }
-
-        //---------Regiao Critica 6
-        if ( x == 360  &&  y >=210 && y <= 220 + 90 ){
-
-            regiao_critica [5] = true;
-
-            if ( ID != ID_trava6){
-                //sem1.acquire();
-                mtx6.lock();
-
-                ID_trava6 = ID;
-
-//                qDebug()<<"Trem ID = "<<ID_trava6 <<"travou mtx6";
-            }
-        }else{
-
-            regiao_critica [5] = false;
-
-        }
-
-        if ( x == 630  &&  y >= 210 && y <= 220+90 ){
-
-            regiao_critica [6] = true;
-
-            if ( ID != ID_trava7){
-                //sem1.acquire();
-                mtx7.lock();
-
-                ID_trava7 = ID;
-
-//                qDebug()<<"Trem ID = "<<ID_trava7 <<"travou mtx2";
-            }
-        }else{
-
-            regiao_critica [6] = false;
-
-        }
         if (velocidade == 0)
             parar = 0;
         else
             parar = 1;
 
-//        if(ID==3){
-//            qDebug()<<"Trem ID = "<<ID <<" entrou no loop";
-//            qDebug()<<"(x,y) "<<"("<<x<<","<<y<<")"<<" | Velocidade " << velocidade<< " Regiao Critica [0] "<<regiao_critica[0];
-//            qDebug()<<"     |x-trilhoX| = "<<std::abs(x - (X_TRILHO1 + TRILHO_H_COMP ));
-//        }
 
         switch(ID){
 
@@ -285,64 +706,9 @@ void Trem::run(){
 
         msleep(201-velocidade);
 
-        if (ID == ID_trava1 && !regiao_critica[0]){
-            //
-            mtx1.unlock();
-            //sem1.release();
-            ID_trava1 = 0;
-//            qDebug()<<"Trem ID = "<<ID <<"liberou mtx1";
-        }
 
-        if (ID == ID_trava2 && !regiao_critica[1]){
-            //
-            mtx2.unlock();
-            //sem1.release();
-            ID_trava2 = 0;
-//            qDebug()<<"Trem ID = "<<ID <<"liberou mtx2";
-        }
 
-        if (ID == ID_trava3 && !regiao_critica[2]){
-            //
-            mtx3.unlock();
-            //sem1.release();
-            ID_trava3 = 0;
-//            qDebug()<<"Trem ID = "<<ID <<"liberou mtx3";
-        }
-
-        if (ID == ID_trava4 && !regiao_critica[3]){
-            //
-            mtx4.unlock();
-            //sem1.release();
-            ID_trava4 = 0;
-//            qDebug()<<"Trem ID = "<<ID <<"liberou mtx4";
-        }
-
-        if (ID == ID_trava5 && !regiao_critica[4]){
-            //
-            mtx5.unlock();
-            //sem1.release();
-            ID_trava5 = 0;
-//            qDebug()<<"Trem ID = "<<ID <<"liberou mtx5";
-        }
-
-        if (ID == ID_trava6 && !regiao_critica[5]){
-            //
-            mtx6.unlock();
-            //sem1.release();
-            ID_trava6 = 0;
-//            qDebug()<<"Trem ID = "<<ID <<"liberou mtx6";
-        }
-
-        if (ID == ID_trava7 && !regiao_critica[6]){
-            //
-            mtx7.unlock();
-            //sem1.release();
-            ID_trava7 = 0;
-//            qDebug()<<"Trem ID = "<<ID <<"liberou mtx7";
-        }
-
-    }
-
+   }
 }
 
 
