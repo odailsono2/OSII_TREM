@@ -55,7 +55,7 @@ void MainWindow::updateInterface(int id, int x, int y){
     //ui->LTREM1->setText("Trem 1 ( " + QString::number( trem1->getX() ) + ", " + QString::number( trem1->getY() ) + " )");
 
 
-    if (trem1->regiao_critica[0] || trem2->regiao_critica[0] || trem3->regiao_critica[0] || trem4->regiao_critica[0] || trem5->regiao_critica[0])
+    if (trem1->regiao_critica[0] || trem2->regiao_critica[0])// || trem3->regiao_critica[0] || trem4->regiao_critica[0] || trem5->regiao_critica[0])
     {
         ui->mtxlabel1->setStyleSheet("QLabel { background-color : orange;}");
     }
@@ -149,34 +149,59 @@ MainWindow::~MainWindow()
 
 void MainWindow::on_horizontalSlider_trem1_valueChanged(int value)
 {
+
+
     trem1->setVelocidade(value);
     ui->display1->setText(QString::number(value) + " km/h");
+
+
+
+
 }
 
 
 void MainWindow::on_horizontalSlider_trem2_valueChanged(int value)
 {
+
     trem2->setVelocidade(value);
+
     ui->display2->setText(QString::number(value) + " km/h");
+
 }
 
-void MainWindow::on_horizontalSlider_trem3_valueChanged(int value)
-{
-      trem3->setVelocidade(value);
-      ui->display3->setText(QString::number(value) + " km/h");
+void MainWindow::on_horizontalSlider_trem3_valueChanged(int value){
+
+
+
+    trem3->setVelocidade(value);
+    ui->display3->setText(QString::number(value) + " km/h");
+
+
 }
 
 
 void MainWindow::on_horizontalSlider_trem4_valueChanged(int value)
 {
+
+
     trem4->setVelocidade(value);
+
     ui->display4->setText(QString::number(value) + " km/h");
+
+
+
 }
 
 
 void MainWindow::on_horizontalSlider_trem5_valueChanged(int value)
 {
+
+
     trem5->setVelocidade(value);
+
+
     ui->display5->setText(QString::number(value) + " km/h");
+
+
 }
 

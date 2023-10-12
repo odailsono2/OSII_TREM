@@ -15,13 +15,6 @@
 #define X_TRILHO2 90
 #define Y_TRILHO2 200
 
-int ID_trava1 = 0;
-int ID_trava2 = 0;
-int ID_trava3 = 0;
-int ID_trava4 = 0;
-int ID_trava5 = 0;
-int ID_trava6 = 0;
-int ID_trava7 = 0;
 
 QMutex mtx1;//(QMutex::Recursive);
 QMutex mtx2;
@@ -38,7 +31,7 @@ void trava(Trem* trem, int m1, int m2, int m3,int m4,int m5, int m6, int m7){
 
 
     msg.append("Trem " + QString::number(trem->getID()) );
-
+    int comp = msg.size();
     if (m1){
         mtx1.lock();
         trem->regiao_critica[0] = true;
@@ -74,14 +67,16 @@ void trava(Trem* trem, int m1, int m2, int m3,int m4,int m5, int m6, int m7){
         trem->regiao_critica[6] = true;
         msg.append(" mtx 7 on |");
     }
-
-    qDebug()<<msg;
+    if (msg.size() != comp)
+        qDebug()<<msg;
 }
 
 void destrava(Trem* trem, int m1, int m2, int m3,int m4,int m5, int m6, int m7){
     QString msg;
 
     msg.append("Trem " + QString::number(trem->getID()) );
+
+    int comp = msg.size();
 
     if (m1){
         mtx1.unlock();
@@ -119,7 +114,8 @@ void destrava(Trem* trem, int m1, int m2, int m3,int m4,int m5, int m6, int m7){
         msg.append(" mtx 7 off |");
     }
 
-    qDebug()<<msg;
+    if (msg.size() != comp)
+        qDebug()<<msg;
 }
 
 void pontos_checagem(Trem* trem, int ID, int pt, int m[7] , int um[7]){
@@ -130,8 +126,14 @@ void pontos_checagem(Trem* trem, int ID, int pt, int m[7] , int um[7]){
 
     int y = trem->getY();
 
+    QString msg;
+
+    msg.append("Trem " + QString::number(trem->getID()) + " ");
+    int comp = msg.size();
+
     if ( x == 490 && y == 80 && pt == 1){ // ponto 1
         if ( ID == 1){
+            msg.append("chegou no ponto "+QString::number(pt));
             trava(trem, m[0], m[1], m[2],m[3], m[4], m[5], m[6]);
             destrava(trem, um[0], um[1], um[2],um[3], um[4], um[5], um[6]);
         }
@@ -140,7 +142,7 @@ void pontos_checagem(Trem* trem, int ID, int pt, int m[7] , int um[7]){
     else if ( x == 490 && y == 200 && pt == 2){ //ponto 2
 
         if ( ID == 1){
-
+            msg.append("chegou no ponto "+QString::number(pt));
            trava(trem, m[0], m[1], m[2],m[3], m[4], m[5], m[6]);
            destrava(trem, um[0], um[1], um[2],um[3], um[4], um[5], um[6]);
 
@@ -148,7 +150,7 @@ void pontos_checagem(Trem* trem, int ID, int pt, int m[7] , int um[7]){
         }
 
         else if ( ID == 4){
-
+            msg.append("chegou no ponto "+QString::number(pt));
            trava(trem, m[0], m[1], m[2],m[3], m[4], m[5], m[6]);
            destrava(trem, um[0], um[1], um[2],um[3], um[4], um[5], um[6]);
 
@@ -159,7 +161,7 @@ void pontos_checagem(Trem* trem, int ID, int pt, int m[7] , int um[7]){
     else if ( x == 380  && y == 200 && pt == 3){ //ponto 3
 
         if ( ID == 1){
-
+            msg.append("chegou no ponto "+QString::number(pt));
             trava(trem, m[0], m[1], m[2],m[3], m[4], m[5], m[6]);
             destrava(trem, um[0], um[1], um[2],um[3], um[4], um[5], um[6]);
 
@@ -167,7 +169,7 @@ void pontos_checagem(Trem* trem, int ID, int pt, int m[7] , int um[7]){
         }
 
         else if ( ID == 4){
-
+            msg.append("chegou no ponto "+QString::number(pt));
            trava(trem, m[0], m[1], m[2],m[3], m[4], m[5], m[6]);
            destrava(trem, um[0], um[1], um[2],um[3], um[4], um[5], um[6]);
 
@@ -182,7 +184,7 @@ void pontos_checagem(Trem* trem, int ID, int pt, int m[7] , int um[7]){
     else if ( x == 340  && y == 200 && pt == 4){ //ponto 4
 
         if ( ID == 1){
-
+            msg.append("chegou no ponto "+QString::number(pt));
             trava(trem, m[0], m[1], m[2],m[3], m[4], m[5], m[6]);
             destrava(trem, um[0], um[1], um[2],um[3], um[4], um[5], um[6]);
 
@@ -190,7 +192,7 @@ void pontos_checagem(Trem* trem, int ID, int pt, int m[7] , int um[7]){
         }
 
         else if ( ID == 3){
-
+            msg.append("chegou no ponto "+QString::number(pt));
            trava(trem, m[0], m[1], m[2],m[3], m[4], m[5], m[6]);
            destrava(trem, um[0], um[1], um[2],um[3], um[4], um[5], um[6]);
 
@@ -202,6 +204,7 @@ void pontos_checagem(Trem* trem, int ID, int pt, int m[7] , int um[7]){
 
     else if ( x == 240 && y == 180 && pt == 5){ //ponto 5
         if ( ID == 1){
+            msg.append("chegou no ponto "+QString::number(pt));
             trava(trem, m[0], m[1], m[2],m[3], m[4], m[5], m[6]);
             destrava(trem, um[0], um[1], um[2],um[3], um[4], um[5], um[6]);
         }
@@ -209,6 +212,7 @@ void pontos_checagem(Trem* trem, int ID, int pt, int m[7] , int um[7]){
 
     else if ( x == 220  && y == 200 && pt == 6){ //ponto 6
         if ( ID == 3){
+            msg.append("chegou no ponto "+QString::number(pt));
             trava(trem, m[0], m[1], m[2],m[3], m[4], m[5], m[6]);
             destrava(trem, um[0], um[1], um[2],um[3], um[4], um[5], um[6]);
         }
@@ -218,7 +222,7 @@ void pontos_checagem(Trem* trem, int ID, int pt, int m[7] , int um[7]){
 
 
         if ( ID == 3){
-
+            msg.append("chegou no ponto "+QString::number(pt));
             trava(trem, m[0], m[1], m[2],m[3], m[4], m[5], m[6]);
             destrava(trem, um[0], um[1], um[2],um[3], um[4], um[5], um[6]);
 
@@ -226,7 +230,7 @@ void pontos_checagem(Trem* trem, int ID, int pt, int m[7] , int um[7]){
         }
 
         else if ( ID == 4){
-
+            msg.append("chegou no ponto "+QString::number(pt));
            trava(trem, m[0], m[1], m[2],m[3], m[4], m[5], m[6]);
            destrava(trem, um[0], um[1], um[2],um[3], um[4], um[5], um[6]);
 
@@ -234,6 +238,7 @@ void pontos_checagem(Trem* trem, int ID, int pt, int m[7] , int um[7]){
     }
     else if ( x == 340  &&  y ==320 && pt == 8){ // ponto 8
         if ( ID == 3){
+            msg.append("chegou no ponto "+QString::number(pt));
             trava(trem, m[0], m[1], m[2],m[3], m[4], m[5], m[6]);
             destrava(trem, um[0], um[1], um[2],um[3], um[4], um[5], um[6]);
         }
@@ -241,6 +246,7 @@ void pontos_checagem(Trem* trem, int ID, int pt, int m[7] , int um[7]){
 
     else if ( x == 380  &&  y ==320 && pt == 9){ // ponto 9
         if ( ID == 4){
+            msg.append("chegou no ponto "+QString::number(pt));
             trava(trem, m[0], m[1], m[2],m[3], m[4], m[5], m[6]);
             destrava(trem, um[0], um[1], um[2],um[3], um[4], um[5], um[6]);
         }
@@ -249,7 +255,7 @@ void pontos_checagem(Trem* trem, int ID, int pt, int m[7] , int um[7]){
     if ( x == 530  &&  y ==200 && pt == 10){ // ponto 10
 
         if ( ID == 2){
-
+            msg.append("chegou no ponto "+QString::number(pt));
             trava(trem, m[0], m[1], m[2],m[3], m[4], m[5], m[6]);
             destrava(trem, um[0], um[1], um[2],um[3], um[4], um[5], um[6]);
 
@@ -257,7 +263,7 @@ void pontos_checagem(Trem* trem, int ID, int pt, int m[7] , int um[7]){
         }
 
         else if ( ID == 4){
-
+            msg.append("chegou no ponto "+QString::number(pt));
            trava(trem, m[0], m[1], m[2],m[3], m[4], m[5], m[6]);
            destrava(trem, um[0], um[1], um[2],um[3], um[4], um[5], um[6]);
 
@@ -267,7 +273,7 @@ void pontos_checagem(Trem* trem, int ID, int pt, int m[7] , int um[7]){
     else if ( x == 610  &&  y ==200 && pt == 11){ // ponto 11
 
         if ( ID == 2){
-
+            msg.append("chegou no ponto "+QString::number(pt));
             trava(trem, m[0], m[1], m[2],m[3], m[4], m[5], m[6]);
             destrava(trem, um[0], um[1], um[2],um[3], um[4], um[5], um[6]);
 
@@ -275,7 +281,7 @@ void pontos_checagem(Trem* trem, int ID, int pt, int m[7] , int um[7]){
         }
 
         else if ( ID == 4){
-
+            msg.append("chegou no ponto "+QString::number(pt));
            trava(trem, m[0], m[1], m[2],m[3], m[4], m[5], m[6]);
            destrava(trem, um[0], um[1], um[2],um[3], um[4], um[5], um[6]);
 
@@ -285,6 +291,7 @@ void pontos_checagem(Trem* trem, int ID, int pt, int m[7] , int um[7]){
 
     else if ( x == 610  &&  y == 320 && pt == 12){ // ponto 12
         if (ID == 4){
+            msg.append("chegou no ponto "+QString::number(pt));
             trava(trem, m[0], m[1], m[2],m[3], m[4], m[5], m[6]);
             destrava(trem, um[0], um[1], um[2],um[3], um[4], um[5], um[6]);
         }
@@ -293,7 +300,7 @@ void pontos_checagem(Trem* trem, int ID, int pt, int m[7] , int um[7]){
     else if ( x == 650  &&  y == 200 && pt==13){ // ponto 13
 
         if ( ID == 2){
-
+            msg.append("chegou no ponto "+QString::number(pt));
             trava(trem, m[0], m[1], m[2],m[3], m[4], m[5], m[6]);
             destrava(trem, um[0], um[1], um[2],um[3], um[4], um[5], um[6]);
 
@@ -301,7 +308,7 @@ void pontos_checagem(Trem* trem, int ID, int pt, int m[7] , int um[7]){
         }
 
         else if ( ID == 5){
-
+            msg.append("chegou no ponto "+QString::number(pt));
            trava(trem, m[0], m[1], m[2],m[3], m[4], m[5], m[6]);
            destrava(trem, um[0], um[1], um[2],um[3], um[4], um[5], um[6]);
 
@@ -313,7 +320,7 @@ void pontos_checagem(Trem* trem, int ID, int pt, int m[7] , int um[7]){
 
 
         if ( ID == 5){
-
+            msg.append("chegou no ponto "+QString::number(pt));
             trava(trem, m[0], m[1], m[2],m[3], m[4], m[5], m[6]);
             destrava(trem, um[0], um[1], um[2],um[3], um[4], um[5], um[6]);
 
@@ -325,7 +332,7 @@ void pontos_checagem(Trem* trem, int ID, int pt, int m[7] , int um[7]){
 
 
         if ( ID == 5){
-
+            msg.append("chegou no ponto "+QString::number(pt));
             trava(trem, m[0], m[1], m[2],m[3], m[4], m[5], m[6]);
             destrava(trem, um[0], um[1], um[2],um[3], um[4], um[5], um[6]);
         }
@@ -334,7 +341,7 @@ void pontos_checagem(Trem* trem, int ID, int pt, int m[7] , int um[7]){
     else if ( x == 510  &&  y == 180 && pt == 16){ // ponto 16
 
         if ( ID == 1){
-
+            msg.append("chegou no ponto "+QString::number(pt));
             trava(trem, m[0], m[1], m[2],m[3], m[4], m[5], m[6]);
             destrava(trem, um[0], um[1], um[2],um[3], um[4], um[5], um[6]);
 
@@ -342,7 +349,7 @@ void pontos_checagem(Trem* trem, int ID, int pt, int m[7] , int um[7]){
         }
 
         else if ( ID == 2){
-
+            msg.append("chegou no ponto "+QString::number(pt));
            trava(trem, m[0], m[1], m[2],m[3], m[4], m[5], m[6]);
            destrava(trem, um[0], um[1], um[2],um[3], um[4], um[5], um[6]);
 
@@ -352,7 +359,7 @@ void pontos_checagem(Trem* trem, int ID, int pt, int m[7] , int um[7]){
     else if ( x == 630  &&  y == 220 && pt == 17){ // ponto 17
 
         if ( ID == 4){
-
+            msg.append("chegou no ponto "+QString::number(pt));
             trava(trem, m[0], m[1], m[2],m[3], m[4], m[5], m[6]);
             destrava(trem, um[0], um[1], um[2],um[3], um[4], um[5], um[6]);
 
@@ -360,7 +367,7 @@ void pontos_checagem(Trem* trem, int ID, int pt, int m[7] , int um[7]){
         }
 
         else if ( ID == 5){
-
+            msg.append("chegou no ponto "+QString::number(pt));
            trava(trem, m[0], m[1], m[2],m[3], m[4], m[5], m[6]);
            destrava(trem, um[0], um[1], um[2],um[3], um[4], um[5], um[6]);
 
@@ -370,7 +377,7 @@ void pontos_checagem(Trem* trem, int ID, int pt, int m[7] , int um[7]){
     else if ( x == 530  &&  y == 80 && pt == 18){ // ponto 18
 
         if ( ID == 2){
-
+            msg.append("chegou no ponto "+QString::number(pt));
             trava(trem, m[0], m[1], m[2],m[3], m[4], m[5], m[6]);
             destrava(trem, um[0], um[1], um[2],um[3], um[4], um[5], um[6]);
 
@@ -383,7 +390,7 @@ void pontos_checagem(Trem* trem, int ID, int pt, int m[7] , int um[7]){
 
 
         if ( ID == 2){
-
+            msg.append("chegou no ponto "+QString::number(pt));
             trava(trem, m[0], m[1], m[2],m[3], m[4], m[5], m[6]);
             destrava(trem, um[0], um[1], um[2],um[3], um[4], um[5], um[6]);
 
@@ -391,7 +398,8 @@ void pontos_checagem(Trem* trem, int ID, int pt, int m[7] , int um[7]){
         }
 
     }
-
+    if (msg.size() != comp)
+        qDebug()<<msg;
 }
 
 
@@ -401,6 +409,7 @@ Trem::Trem(int ID, int x, int y){
     this->x = x;
     this->y = y;
     velocidade = 100;
+    Thread_parada=false;
 }
 int Trem::getX(){
     return x;
@@ -414,19 +423,31 @@ int Trem::getID(){
 }
 void Trem::setVelocidade(int valor){
     this->velocidade = valor ;
+
+    if (velocidade == 0 ){
+        stopThread();
+        qDebug()<<"velocidade 0";
+    }
+    else
+        Thread_parada= false;
+        start();
+}
+
+void Trem::stopThread(){
+    this->Thread_parada.store(true);
+}
+void Trem::startThread(){
+    this->Thread_parada.store(false);
 }
 
 //Função a ser executada após executar trem->START
 void Trem::run(){
 
-    int parar = 1;
-
-
-//    int mtx[] = {1,0,0,0,0,0,0};
-
-//    int umtx[] = {0,0,0,0,0,0,0};
-
     while(true){
+        if(Thread_parada){
+            break;
+            //qDebug() << "Parada";
+        }
 
         // trem 1
         if (ID == 1){
@@ -627,70 +648,71 @@ void Trem::run(){
         }
         //--------------------
 
-        if (velocidade == 0)
-            parar = 0;
-        else
-            parar = 1;
+//        if (velocidade == 0){
+//            this->quit();
+//            this->wait();
+//        }else
+//            this->start();
 
 
         switch(ID){
 
         case 1:     //Trem 1
             if (x < X_TRILHO1 + TRILHO_H_COMP && y == Y_TRILHO1)
-                x+=10*parar;
+                x+=10;
             else if (x == X_TRILHO1 + TRILHO_H_COMP && y < Y_TRILHO1 + TRILHO_V_COMP){
-                y+=10*parar;//move_vertical(y,10,parar,regiao_critica);
+                y+=10;//move_vertical(y,10,parar,regiao_critica);
 
             }
             else if (x > X_TRILHO1  && y == Y_TRILHO1 + TRILHO_V_COMP)
-                x-=10*parar;
+                x-=10;
             else
-                y-=10*parar;
+                y-=10;
 
             break;
         case 2: //Trem 2
             if (x < X_TRILHO1 + 2*TRILHO_H_COMP && y == Y_TRILHO1)
-                x+=10*parar;
+                x+=10;
             else if (x == X_TRILHO1 + 2*TRILHO_H_COMP && y < Y_TRILHO1 + TRILHO_V_COMP)
-                y+=10*parar;
+                y+=10;
             else if (x > X_TRILHO1 + TRILHO_H_COMP  && y == Y_TRILHO1 + TRILHO_V_COMP)
-                x-=10*parar;
+                x-=10;
             else{
-                y+=-10*parar;//move_vertical(y,-10,parar,regiao_critica);
+                y+=-10;//move_vertical(y,-10,parar,regiao_critica);
             }
 
             break;
         case 3: //Trem 3
             if (x < X_TRILHO2 + TRILHO_H_COMP && y == Y_TRILHO2)
-                x+=10*parar;
+                x+=10;
             else if (x == X_TRILHO2 + TRILHO_H_COMP && y < Y_TRILHO2 + TRILHO_V_COMP)
-                y+=10*parar;
+                y+=10;
             else if (x > X_TRILHO2  && y == Y_TRILHO2 + TRILHO_V_COMP)
-                x-=10*parar;
+                x-=10;
             else
-                y-=10*parar;
+                y-=10;
 
             break;
         case 4: //Trem 4
             if (x < X_TRILHO2 + 2*TRILHO_H_COMP && y == Y_TRILHO2)
-                x+=10*parar;
+                x+=10;
             else if (x == X_TRILHO2 + 2*TRILHO_H_COMP && y < Y_TRILHO2 + TRILHO_V_COMP)
-                y+=10*parar;
+                y+=10;
             else if (x > X_TRILHO2 + TRILHO_H_COMP && y == Y_TRILHO2 + TRILHO_V_COMP)
-                x-=10*parar;
+                x-=10;
             else
-                y-=10*parar;
+                y-=10;
 
             break;
         case 5: //Trem 5
             if (x < X_TRILHO2 + 3*TRILHO_H_COMP && y == Y_TRILHO2)
-                x+=10*parar;
+                x+=10;
             else if (x == X_TRILHO2 + 3*TRILHO_H_COMP && y < Y_TRILHO2 + TRILHO_V_COMP)
-                y+=10*parar;
+                y+=10;
             else if (x > X_TRILHO2 + 2*TRILHO_H_COMP && y == Y_TRILHO2 + TRILHO_V_COMP)
-                x-=10*parar;
+                x-=10;
             else
-                y-=10*parar;
+                y-=10;
 
             break;
 
@@ -704,13 +726,13 @@ void Trem::run(){
 
         emit updateGUI(ID, x,y);    //Emite um sinal
 
-        msleep(201-velocidade);
+        msleep(210-velocidade);
 
 
 
    }
 }
 
-
+//void Trem::run(){
 
 

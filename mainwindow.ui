@@ -40,7 +40,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">QLabel { background: yellow}</string>
+     <string notr="true">QLabel { background: rgb(154, 153, 150);}</string>
     </property>
     <property name="text">
      <string/>
@@ -56,7 +56,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">QLabel { background: yellow}</string>
+     <string notr="true">QLabel { background: rgb(154, 153, 150);}</string>
     </property>
     <property name="text">
      <string/>
@@ -72,7 +72,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">QLabel { background: yellow}</string>
+     <string notr="true">QLabel { background: rgb(154, 153, 150);}</string>
     </property>
     <property name="text">
      <string/>
@@ -88,7 +88,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">QLabel { background: yellow}</string>
+     <string notr="true">QLabel { background: rgb(154, 153, 150);}</string>
     </property>
     <property name="text">
      <string/>
@@ -104,7 +104,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">QLabel { background: yellow}</string>
+     <string notr="true">QLabel { background: rgb(154, 153, 150);}</string>
     </property>
     <property name="text">
      <string/>
@@ -120,7 +120,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">QLabel { background: red}</string>
+     <string notr="true">QLabel { background: rgb(220, 138, 221)}</string>
     </property>
     <property name="text">
      <string>T2</string>
@@ -136,7 +136,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">QLabel { background: yellow}</string>
+     <string notr="true">QLabel { background: rgb(154, 153, 150);}</string>
     </property>
     <property name="text">
      <string/>
@@ -152,7 +152,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">QLabel { background: yellow}</string>
+     <string notr="true">QLabel { background: rgb(154, 153, 150);}</string>
     </property>
     <property name="text">
      <string/>
@@ -168,7 +168,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">QLabel { background: yellow}</string>
+     <string notr="true">QLabel { background: rgb(154, 153, 150);}</string>
     </property>
     <property name="text">
      <string/>
@@ -184,7 +184,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">QLabel { background: red}</string>
+     <string notr="true">QLabel { background: rgb(249, 240, 107);}</string>
     </property>
     <property name="text">
      <string>T3</string>
@@ -200,7 +200,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">QLabel { background: yellow}</string>
+     <string notr="true">QLabel { background: rgb(154, 153, 150);}</string>
     </property>
     <property name="text">
      <string/>
@@ -216,7 +216,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">QLabel { background: yellow}</string>
+     <string notr="true">QLabel { background: rgb(154, 153, 150);}</string>
     </property>
     <property name="text">
      <string/>
@@ -232,7 +232,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">QLabel { background: yellow}</string>
+     <string notr="true">QLabel { background: rgb(154, 153, 150);}</string>
     </property>
     <property name="text">
      <string/>
@@ -248,7 +248,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">QLabel { background: red}</string>
+     <string notr="true">QLabel { background: rgb(134, 94, 60)}</string>
     </property>
     <property name="text">
      <string>T4</string>
@@ -264,7 +264,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">QLabel { background: yellow}</string>
+     <string notr="true">QLabel { background: rgb(154, 153, 150);}</string>
     </property>
     <property name="text">
      <string/>
@@ -280,7 +280,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">QLabel { background: yellow}</string>
+     <string notr="true">QLabel { background: rgb(154, 153, 150);}</string>
     </property>
     <property name="text">
      <string/>
@@ -296,7 +296,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">QLabel { background: red}</string>
+     <string notr="true">QLabel { background: rgb(255, 120, 0)}</string>
     </property>
     <property name="text">
      <string>T5</string>
@@ -552,7 +552,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(143, 240, 164);</string>
+     <string notr="true">QLabel { background: rgb(192, 191, 188);}</string>
     </property>
     <property name="text">
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;1&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -568,7 +568,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(143, 240, 164);</string>
+     <string notr="true">QLabel { background: rgb(192, 191, 188);}</string>
     </property>
     <property name="text">
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;2&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -584,7 +584,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(143, 240, 164);</string>
+     <string notr="true">QLabel { background: rgb(192, 191, 188);}</string>
     </property>
     <property name="text">
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;3&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -600,7 +600,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(143, 240, 164);</string>
+     <string notr="true">QLabel { background: rgb(192, 191, 188);}</string>
     </property>
     <property name="text">
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;4&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -616,7 +616,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(143, 240, 164);</string>
+     <string notr="true">QLabel { background: rgb(192, 191, 188);}</string>
     </property>
     <property name="text">
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;7&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -632,7 +632,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(143, 240, 164);</string>
+     <string notr="true">QLabel { background: rgb(192, 191, 188);}</string>
     </property>
     <property name="text">
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;6&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -648,7 +648,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(143, 240, 164);</string>
+     <string notr="true">QLabel { background: rgb(192, 191, 188);}</string>
     </property>
     <property name="text">
      <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p align=&quot;center&quot;&gt;5&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
@@ -664,7 +664,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">QLabel { background: yellow}</string>
+     <string notr="true">QLabel { background: rgb(154, 153, 150);}</string>
     </property>
     <property name="text">
      <string/>
@@ -680,7 +680,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(98, 160, 234);</string>
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string>1</string>
@@ -696,7 +696,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(98, 160, 234);</string>
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string>5</string>
@@ -712,7 +712,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(98, 160, 234);</string>
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string>6</string>
@@ -728,7 +728,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(98, 160, 234);</string>
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string>8</string>
@@ -744,7 +744,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(98, 160, 234);</string>
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string>7</string>
@@ -760,7 +760,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(98, 160, 234);</string>
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string>2</string>
@@ -776,7 +776,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(98, 160, 234);</string>
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string>4</string>
@@ -792,7 +792,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(98, 160, 234);</string>
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string>18</string>
@@ -808,7 +808,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(98, 160, 234);</string>
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string>9</string>
@@ -824,7 +824,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(98, 160, 234);</string>
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string>16</string>
@@ -840,7 +840,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(98, 160, 234);</string>
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string>12</string>
@@ -856,7 +856,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(98, 160, 234);</string>
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string>19</string>
@@ -872,7 +872,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(98, 160, 234);</string>
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string>11</string>
@@ -888,7 +888,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(98, 160, 234);</string>
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string>3</string>
@@ -904,7 +904,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(98, 160, 234);</string>
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string>10</string>
@@ -920,7 +920,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(98, 160, 234);</string>
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string>13</string>
@@ -936,7 +936,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(98, 160, 234);</string>
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string>14</string>
@@ -952,7 +952,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(98, 160, 234);</string>
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string>15</string>
@@ -968,7 +968,7 @@
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color: rgb(98, 160, 234);</string>
+     <string notr="true">background-color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string>17</string>

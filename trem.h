@@ -20,13 +20,15 @@ public:
     int getX();
     int getY();
     int getID();
-
+    void stopThread();
+    void startThread();
 
 //Cria um sinal
 signals:
     void updateGUI(int,int,int);
 
 private:
+   std::atomic<bool> Thread_parada;
    int x;           //posição X do trem na tela
    int y;           //posição Y do trem na tela
    int ID;          //ID do trem
